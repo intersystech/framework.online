@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.BusinessFacade", "Intersystech.BusinessFacade\Intersystech.BusinessFacade.csproj", "{14535F68-84E9-4C21-AEC8-F4D9F2EAA987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.CommonIF", "Intersystech.CommonIF\Intersystech.CommonIF.csproj", "{98FC571D-8335-4C25-B4A8-A57FEED89AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.ConnectionFactory", "Intersystech.ConnectionFactory\Intersystech.ConnectionFactory.csproj", "{408C7676-5AEC-468D-B807-A3A72575C911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.Utility", "Intersystech.Utility\Intersystech.Utility.csproj", "{2CCF151B-7ABF-499E-947A-D01E5083DAD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.DataAccess", "Intersystech.DataAccess\Intersystech.DataAccess.csproj", "{91A1A972-9AD7-422D-95C4-11A32980F372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.DataModel", "Intersystech.DataModel\Intersystech.DataModel.csproj", "{B14F19A4-66AE-4074-B702-E9C8B486F0B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.Extension", "Intersystech.Extension\Intersystech.Extension.csproj", "{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.UI", "Intersystech.UI\Intersystech.UI.csproj", "{C12D3E3A-03C5-485E-A711-63AF1E49ADC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intersystech.ExceptionLibrary", "Intersystech.ExceptionLibrary\Intersystech.ExceptionLibrary.csproj", "{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14535F68-84E9-4C21-AEC8-F4D9F2EAA987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14535F68-84E9-4C21-AEC8-F4D9F2EAA987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14535F68-84E9-4C21-AEC8-F4D9F2EAA987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14535F68-84E9-4C21-AEC8-F4D9F2EAA987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14535F68-84E9-4C21-AEC8-F4D9F2EAA987}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{98FC571D-8335-4C25-B4A8-A57FEED89AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FC571D-8335-4C25-B4A8-A57FEED89AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FC571D-8335-4C25-B4A8-A57FEED89AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FC571D-8335-4C25-B4A8-A57FEED89AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FC571D-8335-4C25-B4A8-A57FEED89AC7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{408C7676-5AEC-468D-B807-A3A72575C911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408C7676-5AEC-468D-B807-A3A72575C911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408C7676-5AEC-468D-B807-A3A72575C911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408C7676-5AEC-468D-B807-A3A72575C911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408C7676-5AEC-468D-B807-A3A72575C911}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2CCF151B-7ABF-499E-947A-D01E5083DAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCF151B-7ABF-499E-947A-D01E5083DAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCF151B-7ABF-499E-947A-D01E5083DAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCF151B-7ABF-499E-947A-D01E5083DAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCF151B-7ABF-499E-947A-D01E5083DAD9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{91A1A972-9AD7-422D-95C4-11A32980F372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A1A972-9AD7-422D-95C4-11A32980F372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A1A972-9AD7-422D-95C4-11A32980F372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A1A972-9AD7-422D-95C4-11A32980F372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A1A972-9AD7-422D-95C4-11A32980F372}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B14F19A4-66AE-4074-B702-E9C8B486F0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14F19A4-66AE-4074-B702-E9C8B486F0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14F19A4-66AE-4074-B702-E9C8B486F0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14F19A4-66AE-4074-B702-E9C8B486F0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14F19A4-66AE-4074-B702-E9C8B486F0B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C12D3E3A-03C5-485E-A711-63AF1E49ADC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12D3E3A-03C5-485E-A711-63AF1E49ADC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12D3E3A-03C5-485E-A711-63AF1E49ADC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12D3E3A-03C5-485E-A711-63AF1E49ADC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12D3E3A-03C5-485E-A711-63AF1E49ADC5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.0\lib\NET35
+		SolutionGuid = {4AD247B3-FABA-49DA-9A02-51AC865DEEF3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://intersystech.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Intersystech.BusinessFacade\\Intersystech.BusinessFacade.csproj
+		SccProjectName1 = Intersystech.BusinessFacade
+		SccLocalPath1 = Intersystech.BusinessFacade
+		SccProjectUniqueName2 = Intersystech.CommonIF\\Intersystech.CommonIF.csproj
+		SccProjectName2 = Intersystech.CommonIF
+		SccLocalPath2 = Intersystech.CommonIF
+		SccProjectUniqueName3 = Intersystech.ConnectionFactory\\Intersystech.ConnectionFactory.csproj
+		SccProjectName3 = Intersystech.ConnectionFactory
+		SccLocalPath3 = Intersystech.ConnectionFactory
+		SccProjectUniqueName4 = Intersystech.DataAccess\\Intersystech.DataAccess.csproj
+		SccProjectName4 = Intersystech.DataAccess
+		SccLocalPath4 = Intersystech.DataAccess
+		SccProjectUniqueName5 = Intersystech.DataModel\\Intersystech.DataModel.csproj
+		SccProjectName5 = Intersystech.DataModel
+		SccLocalPath5 = Intersystech.DataModel
+		SccProjectUniqueName6 = Intersystech.ExceptionLibrary\\Intersystech.ExceptionLibrary.csproj
+		SccProjectName6 = Intersystech.ExceptionLibrary
+		SccLocalPath6 = Intersystech.ExceptionLibrary
+		SccProjectUniqueName7 = Intersystech.Extension\\Intersystech.Extension.csproj
+		SccProjectName7 = Intersystech.Extension
+		SccLocalPath7 = Intersystech.Extension
+		SccProjectUniqueName8 = Intersystech.UI\\Intersystech.UI.csproj
+		SccProjectName8 = Intersystech.UI
+		SccLocalPath8 = Intersystech.UI
+		SccProjectUniqueName9 = Intersystech.Utility\\Intersystech.Utility.csproj
+		SccProjectName9 = Intersystech.Utility
+		SccLocalPath9 = Intersystech.Utility
+	EndGlobalSection
+EndGlobal
