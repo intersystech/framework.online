@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatabaseCustomException"
+    targetNamespace="http://tempuri.org/DatabaseCustomException.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/DatabaseCustomException.xsd"
+    xmlns:mstns="http://tempuri.org/DatabaseCustomException.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="databaseCustomException" type="mstns:NameValueCollection">
+		<xs:unique name="uniqueErrorNumber">
+			<xs:selector xpath=".//*" />
+			<xs:field xpath="@errorNumber" />
+			<xs:field xpath="@database" />
+		</xs:unique>
+	</xs:element>
+	<xs:simpleType name="databaseName">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access" />
+			<xs:enumeration value="MySQL" />
+			<xs:enumeration value="Oracle" />
+			<xs:enumeration value="SQLServer" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="resolveType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Alert" />
+			<xs:enumeration value="Throw" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="NameValueCollection">
+		<xs:sequence>
+			<xs:element name="customExceptionMapping" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="errorNumber" type="xs:long" use="required" />
+					<xs:attribute name="mappedMessage" type="xs:string" use="required" />
+					<xs:attribute name="database" type="databaseName" use="required" />
+					<xs:attribute name="resolve" type="resolveType" use="optional" default="Alert" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

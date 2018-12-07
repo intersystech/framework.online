@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.Extension</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.Extension.DataSetExtension">
+            <summary>
+            DataSetの拡張クラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.DataSetExtension.CreateDataSet``1(System.Data.DataSet)">
+            <summary>
+            TypedDataSetを生成します。
+            </summary>
+            <typeparam name="T">TypedDataSet</typeparam>
+            <param name="dataSet">DataSet</param>
+            <returns>TypedDataSet</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DataSetExtension.Copy``1(System.Data.DataSet)">
+            <summary>
+            TypedDataSetをコピーします。
+            </summary>
+            <typeparam name="T">TypedDataSet</typeparam>
+            <param name="dataSet">DataSet</param>
+            <returns>TypedDataSet</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DataSetExtension.Clone``1(System.Data.DataSet)">
+            <summary>
+            TypedDataSetをクローンします。
+            </summary>
+            <typeparam name="T">TypedDataSet</typeparam>
+            <param name="dataSet">DataSet</param>
+            <returns>TypedDataSet</returns>
+        </member>
+        <member name="T:Intersystech.Extension.DateTimeExtension">
+            <summary>
+            DateTime型の拡張クラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToStrYmd(System.DateTime)">
+            <summary>
+            yyyyMMdd形式の文字列を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>yyyyMMdd形式の文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToStrYmdSlash(System.DateTime)">
+            <summary>
+            yyyy/MM/dd形式の文字列を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>yyyy/MM/dd形式の文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToStrYmdHms(System.DateTime)">
+            <summary>
+            yyyyMMddHHmmss形式の文字列を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>yyyyMMddHHmmss形式の文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToStrHm(System.DateTime)">
+            <summary>
+            HHmm形式の文字列を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>HHmm形式の文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToStrHmColon(System.DateTime)">
+            <summary>
+            HH:mm形式の文字列を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>HH:mm形式の文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToStrYmdHmsColon(System.DateTime)">
+            <summary>
+            yyyy/MM/dd HH:mm:ss形式の文字列を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>yyyy/MM/dd HH:mm:ss形式の文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToJapaneseYmd(System.DateTime)">
+            <summary>
+            和暦形式ggyy年M月d日の半角文字列を返します。
+            <example>例：平成26年1月1日</example>
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToJapaneseMd(System.DateTime)">
+            <summary>
+            和暦形式M月d日の半角文字列を返します。
+            <example>例：1月1日</example>
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.GetDayName(System.DateTime,System.String)">
+            <summary>
+            曜日の省略名を返します。
+            <example>例：日、月</example>
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <param name="languageCd">言語コード</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToJapaneseYmdZenkaku(System.DateTime)">
+            <summary>
+            和暦形式ggyy年M月d日の全角文字列を返します。
+            <example>例：平成２６年１月１日</example>
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToJapaneseYmmdd(System.DateTime)">
+            <summary>
+            和暦形式ggyy年MM月dd日の半角文字列を返します。
+            <example>例：平成26年01月01日</example>
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.ToJapaneseYmmddZenkaku(System.DateTime)">
+            <summary>
+            和暦形式ggyy年MM月dd日の全角文字列を返します。
+            <example>例：平成２６年０１月０１日</example>
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.GetWeekOfYear(System.DateTime)">
+            <summary>
+            指定した日付を含むその年の週を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>パラメーターの日付を含む年の週を表す 1 から始まる整数。</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.GetFirstDayOfWeek(System.DateTime)">
+            <summary>
+            指定した日付を含むその年の週の初日を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>パラメーターの日付を含む年の週の初日。</returns>
+        </member>
+        <member name="M:Intersystech.Extension.DateTimeExtension.GetLastDayOfWeek(System.DateTime)">
+            <summary>
+            指定した日付を含むその年の週の最終日を返します。
+            </summary>
+            <param name="dateTime">対象日付型オブジェクト</param>
+            <returns>パラメーターの日付を含む年の週の最終日。</returns>
+        </member>
+        <member name="T:Intersystech.Extension.LinqExtension">
+            <summary>
+            Linqの拡張クラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Where``1(System.Linq.IQueryable{``0},System.String,System.Object[])">
+            <summary>
+            述語に基づいて値のシーケンスをフィルター処理します。
+            </summary>
+            <typeparam name="T">型パラメーター:source の要素の型</typeparam>
+            <param name="source">フィルター処理するデータソース</param>
+            <param name="predicate">条件式</param>
+            <param name="values">条件式に指定されたパラメータの入力値</param>
+            <returns>指定された条件を満たす、入力シーケンスの要素を含む System.Linq.IQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Where(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            述語に基づいて値のシーケンスをフィルター処理します。
+            </summary>
+            <param name="source">フィルター処理するデータソース</param>
+            <param name="predicate">条件式</param>
+            <param name="values">条件式に指定されたパラメータの入力値</param>
+            <returns>指定された条件を満たす、入力シーケンスの要素を含む System.Linq.IQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Select(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            要素のインデックスを組み込むことにより、シーケンスの各要素を新しいフォームに射影します。
+            </summary>
+            <param name="source">フィルター処理するデータソース</param>
+            <param name="selector">条件式</param>
+            <param name="values">条件式に指定されたパラメータの入力値</param>
+            <returns>source の各要素に対して射影関数を呼び出した結果として得られる要素を含む System.Linq.IQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.OrderBy``1(System.Linq.IQueryable{``0},System.String,System.Object[])">
+            <summary>
+            シーケンスの要素をキーに従って昇順に並べ替えます。
+            </summary>
+            <typeparam name="T">型パラメーター:source の要素の型</typeparam>
+            <param name="source">順序付ける値のシーケンス</param>
+            <param name="ordering">条件式</param>
+            <param name="values">条件式に指定されたパラメータの入力値</param>
+            <returns>要素がキーに従って並べ替えられている System.Linq.IOrderedQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.OrderBy(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            シーケンスの要素をキーに従って昇順に並べ替えます。
+            </summary>
+            <param name="source">順序付ける値のシーケンス</param>
+            <param name="ordering">条件式</param>
+            <param name="values">条件式に指定されたパラメータの入力値</param>
+            <returns>要素がキーに従って並べ替えられている System.Linq.IOrderedQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Take(System.Linq.IQueryable,System.Int32)">
+            <summary>
+            シーケンスの先頭から、指定された数の連続する要素を返します。
+            </summary>
+            <param name="source">要素を返すシーケンス</param>
+            <param name="count">返す要素数</param>
+            <returns>source の先頭から、指定された数の要素を含む System.Linq.IQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Skip(System.Linq.IQueryable,System.Int32)">
+            <summary>
+            シーケンス内の指定された数の要素をバイパスし、残りの要素を返します。
+            </summary>
+            <param name="source">返される要素が含まれる System.Linq.IQueryable</param>
+            <param name="count">残りの要素を返す前にスキップする要素の数</param>
+            <returns>入力シーケンスで指定されたインデックスの後に出現する要素を含む System.Linq.IQueryable</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.GroupBy(System.Linq.IQueryable,System.String,System.String,System.Object[])">
+            <summary>
+            指定されたキー セレクター関数に従ってシーケンスの要素をグループ化します。
+            </summary>
+            <param name="source">グループ化する要素を含む System.Linq.IQueryable</param>
+            <param name="keySelector">各要素のキーを抽出する関数</param>
+            <param name="elementSelector">ソースの各要素を System.Linq.IGroupingの要素に割り当てる関数</param>
+            <param name="values">条件式に指定されたパラメータの入力値</param>
+            <returns>TElement 型のオブジェクトのシーケンス、およびキーが格納されています</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Any(System.Linq.IQueryable)">
+            <summary>
+            シーケンスに要素が含まれているかどうかを判断します。
+            </summary>
+            <param name="source">空かどうかを確認するシーケンス。</param>
+            <returns>ソース シーケンスに要素が含まれている場合は true。それ以外の場合は false</returns>
+        </member>
+        <member name="M:Intersystech.Extension.LinqExtension.Count(System.Linq.IQueryable)">
+            <summary>
+            シーケンス内の要素数を返します。
+            </summary>
+            <param name="source">カウントする要素が格納されている System.Linq.IQueryable</param>
+            <returns>入力シーケンス内の要素数</returns>
+        </member>
+        <member name="T:Intersystech.Extension.DynamicClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicClass.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Intersystech.Extension.DynamicProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicProperty.#ctor(System.String,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+        </member>
+        <member name="P:Intersystech.Extension.DynamicProperty.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Intersystech.Extension.DynamicProperty.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Intersystech.Extension.DynamicExpression">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicExpression.Parse(System.Type,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="resultType"></param>
+            <param name="expression"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicExpression.ParseLambda(System.Type,System.Type,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="itType"></param>
+            <param name="resultType"></param>
+            <param name="expression"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicExpression.ParseLambda(System.Linq.Expressions.ParameterExpression[],System.Type,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <param name="resultType"></param>
+            <param name="expression"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicExpression.ParseLambda``2(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="S"></typeparam>
+            <param name="expression"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicExpression.CreateClass(Intersystech.Extension.DynamicProperty[])">
+            <summary>
+            
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersystech.Extension.DynamicExpression.CreateClass(System.Collections.Generic.IEnumerable{Intersystech.Extension.DynamicProperty})">
+            <summary>
+            
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersystech.Extension.ParseException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.ParseException.#ctor(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="position"></param>
+        </member>
+        <member name="P:Intersystech.Extension.ParseException.Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.ParseException.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Intersystech.Extension.StringExtension">
+            <summary>
+            Stringの拡張クラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.Extension.StringExtension.WhiteSpace">
+            <summary>
+            半角スペース
+            </summary>
+        </member>
+        <member name="P:Intersystech.Extension.StringExtension.WhiteSpaceZenkaku">
+            <summary>
+            全角スペース
+            </summary>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.ToHankaku(System.String)">
+            <summary>
+            半角フォーマットに変換された文字列を返します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>半角文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.ToZenkaku(System.String)">
+            <summary>
+            全角フォーマットに変換された文字列を返します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>全角文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.ToDateTimeOrNull(System.String)">
+            <summary>
+            対象文字列を日付型またはnullに変換します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>日付型またはnull</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.ToDateTime(System.String)">
+            <summary>
+            対象文字列を日付型に変換します。変換できない場合、FormatExceptionをThrowします。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>日付型</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.ToEnumValue``1(System.String)">
+            <summary>
+            対象文字列を列挙型に変換します。
+            </summary>
+            <typeparam name="T">変換先Type</typeparam>
+            <param name="str">対象文字列</param>
+            <returns>列挙型</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.ToSafeValue(System.String)">
+            <summary>
+            ['] を [''] に変換します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>('')変換済みの文字列</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.GetByteCount(System.String,System.Int32)">
+            <summary>
+            対象文字列をエンコードすることによって生成されるバイト数を計算します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <param name="codepage">使用するエンコーディングのコード ページ ID</param>
+            <returns>対象文字列をエンコードすることによって生成されるバイト数</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.GetByteCount(System.String,System.String)">
+            <summary>
+            対象文字列をエンコードすることによって生成されるバイト数を計算します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <param name="encodingName">エンコーディング名</param>
+            <returns>対象文字列をエンコードすることによって生成されるバイト数</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.GetByteCountShiftJIS(System.String)">
+            <summary>
+            対象文字列をShift_JISエンコードで生成されるバイト数を計算します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>対象文字列をShift_JISエンコードで生成されるバイト数</returns>
+        </member>
+        <member name="M:Intersystech.Extension.StringExtension.GetByteCountUTF8(System.String)">
+            <summary>
+            対象文字列をUTF8エンコードで生成されるバイト数を計算します。
+            </summary>
+            <param name="str">対象文字列</param>
+            <returns>対象文字列をUTF8エンコードで生成されるバイト数</returns>
+        </member>
+    </members>
+</doc>

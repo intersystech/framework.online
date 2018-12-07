@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.ExceptionLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.ExceptionLibrary.AlertCustomSystemException">
+            <summary>
+            AlertCustomSystemExceptionクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.AlertCustomSystemException.#ctor(System.String)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="message">Exception内容</param>
+        </member>
+        <member name="T:Intersystech.ExceptionLibrary.CustomSystemException">
+            <summary>
+            CustomSystemExceptionクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.CustomSystemException.#ctor(System.String)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="message">Exception内容</param>
+        </member>
+        <member name="T:Intersystech.ExceptionLibrary.IntersystechSystemException">
+            <summary>
+            IntersystechSystemException
+            </summary>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.IntersystechSystemException.#ctor(System.String)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="message">Exception内容</param>
+        </member>
+        <member name="T:Intersystech.ExceptionLibrary.ExceptionUtility">
+            <summary>
+            ThrowUtilityクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.Alert(System.String,System.Boolean)">
+            <summary>
+            実行中の処理を中止し、Alertメッセージを画面側に表示するとともに、トランザクションをロールバックします。
+            ただし、第三引数をFalse指定する場合、トランザクションをコミットします。
+            </summary>
+            <param name="message">メッセージ内容</param>
+            <param name="rollBackTransaction">実行中のトランザクションをロールバックするか</param>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.Alert(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            指定条件に満たされる場合のみ、実行中の処理を中止し、Alertメッセージを画面側に表示するとともに、トランザクションをロールバックします。
+            ただし、第三引数をFalse指定する場合、トランザクションをコミットします。
+            </summary>
+            <param name="condition">指定条件</param>
+            <param name="message">メッセージ内容</param>
+            <param name="rollBackTransaction">実行中のトランザクションをロールバックするか</param>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.ThrowCustomSystemException(System.String)">
+            <summary>
+            指定したエラーメッセージを利用して、CustomSystemExceptionを発生させます。
+            トランザクション処理の場合、ロールバックし共通エラー画面へ遷移します。
+            </summary>
+            <param name="message">Exception内容</param>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.ThrowCustomSystemException(System.Boolean,System.String)">
+            <summary>
+            指定条件に満たされる場合のみ、指定したエラーメッセージを利用して、CustomSystemExceptionを発生させます。
+            トランザクション処理の場合、ロールバックし共通エラー画面へ遷移します。
+            </summary>
+            <param name="condition">指定条件</param>
+            <param name="message">Exception内容</param>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.ThrowIntersystechSystemException(System.String)">
+            <summary>
+            指定したエラーメッセージを利用して、CustomSystemExceptionを発生させます。
+            トランザクション処理の場合、ロールバックし共通エラー画面へ遷移します。
+            </summary>
+            <param name="message">Exception内容</param>
+        </member>
+        <member name="M:Intersystech.ExceptionLibrary.ExceptionUtility.ThrowIntersystechSystemException(System.Boolean,System.String)">
+            <summary>
+            指定条件に満たされる場合のみ、指定したエラーメッセージを利用して、CustomSystemExceptionを発生させます。
+            トランザクション処理の場合、ロールバックし共通エラー画面へ遷移します。
+            </summary>
+            <param name="condition">指定条件</param>
+            <param name="message">Exception内容</param>
+        </member>
+    </members>
+</doc>

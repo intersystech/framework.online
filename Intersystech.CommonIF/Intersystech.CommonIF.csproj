@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98FC571D-8335-4C25-B4A8-A57FEED89AC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intersystech.CommonIF</RootNamespace>
+    <AssemblyName>Intersystech.CommonIF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\Intersystech.CommonIF.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\Intersystech.CommonIF.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Intersystech.CommonIF.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Intersystech.DataModel">
+      <HintPath>..\Intersystech.DataModel\bin\Debug\Intersystech.DataModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseCustomExceptionMapping.cs" />
+    <Compile Include="IDatabaseCustomExceptionMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intersystech.ExceptionLibrary\Intersystech.ExceptionLibrary.csproj">
+      <Project>{0BEDD44F-8F4D-4ED9-B10C-CD2F36733F1A}</Project>
+      <Name>Intersystech.ExceptionLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intersystech.Utility\Intersystech.Utility.csproj">
+      <Project>{2CCF151B-7ABF-499E-947A-D01E5083DAD9}</Project>
+      <Name>Intersystech.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intersystech.Extension\Intersystech.Extension.csproj">
+      <Project>{376BB3A5-86B7-44E0-8B1C-CEF2F9568FF5}</Project>
+      <Name>Intersystech.Extension</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DatabaseCustomException.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Intersystech.CommonIF.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <PostBuildEvent>if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)$(TargetName).xml $(SolutionDir)Binaries /D /R /Y /I /K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)$(TargetName).dll $(SolutionDir)Binaries /D /R /Y /I /K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)$(TargetName).pdb $(SolutionDir)Binaries /D /R /Y /I /K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)Microsoft.Practices.EnterpriseLibrary.Common.xml $(SolutionDir)Binaries /D /R /Y /I/K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)Microsoft.Practices.EnterpriseLibrary.Common.dll $(SolutionDir)Binaries /D /R /Y /I /K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)Microsoft.Practices.EnterpriseLibrary.Logging.xml $(SolutionDir)Binaries /D /R /Y /I/K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)Microsoft.Practices.EnterpriseLibrary.Logging.dll $(SolutionDir)Binaries /D /R /Y /I /K
+if $(ConfigurationName) == Release xcopy $(ProjectDir)$(OutDir)*.xsd $(SolutionDir)Binaries /D /R /Y /I /K</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.BusinessFacade</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.BusinessFacade.BusinessFacadeRepository">
+            <summary>
+            BusinessFacadeRepositoryクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.BusinessFacade.BusinessFacadeRepository.GetBusinessFacade``1">
+            <summary>
+            指定したBusinessFacadeクラスのインスタンスを取得します。
+            </summary>
+            <typeparam name="T">BusinessFacadeRepository型</typeparam>
+            <returns>BusinessFacadeのインスタンス</returns>
+        </member>
+        <member name="M:Intersystech.BusinessFacade.BusinessFacadeRepository.GetDataAccess``1">
+            <summary>
+            DataAccessRepositoryを継承するクラスのインスタンスを取得します。
+            </summary>
+            <typeparam name="T">DataAccessRepository型</typeparam>
+            <returns>T型のインスタンス</returns>
+        </member>
+        <member name="T:Intersystech.BusinessFacade.TransactionType">
+            <summary>
+            トランザクションタイプ
+            </summary>
+        </member>
+        <member name="F:Intersystech.BusinessFacade.TransactionType.Query">
+            <summary>
+            検索
+            </summary>
+        </member>
+        <member name="F:Intersystech.BusinessFacade.TransactionType.Update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="F:Intersystech.BusinessFacade.TransactionType.Single">
+            <summary>
+            独立
+            </summary>
+        </member>
+        <member name="T:Intersystech.BusinessFacade.TransactionMode">
+            <summary>
+            トランザクションモードプロパティ
+            </summary>
+        </member>
+        <member name="M:Intersystech.BusinessFacade.TransactionMode.#ctor(Intersystech.BusinessFacade.TransactionType)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="transactionType">トランザクション種類</param>
+        </member>
+        <member name="P:Intersystech.BusinessFacade.TransactionMode.TransactionType">
+            <summary>
+            トランザクション種類
+            </summary>
+        </member>
+    </members>
+</doc>

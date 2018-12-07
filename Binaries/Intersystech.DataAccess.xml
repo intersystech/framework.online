@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.DataAccess.DataAccessRepository">
+            <summary>
+            データアクセスリポジトリ
+            </summary>
+        </member>
+        <member name="M:Intersystech.DataAccess.DataAccessRepository.Execute(System.String,System.Int32)">
+            <summary>
+            SQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">SQLコマンドタイムアウト値(秒単位)</param>
+            <returns>ユーザー定義型Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.DataAccess.DataAccessRepository.ExecuteScalar(System.String,System.Int32)">
+            <summary>
+            SQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">SQLコマンドタイムアウト値(秒単位)</param>
+            <returns>ユーザー定義型Dtoオブジェクト</returns>
+        </member>
+    </members>
+</doc>

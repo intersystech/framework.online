@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.ConnectionFactory</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.ConnectionFactory.OleDbConnectionFactory">
+            <summary>
+            OleDbConnectionFactoryクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.CreateConnection">
+            <summary>
+            データベースへ接続します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.Open">
+            <summary>
+            データベース接続をOpenします。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.Close">
+            <summary>
+            データベース接続をCloseします。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.BeginTransaction">
+            <summary>
+            トランザクション開始関数
+            トランザクションの開始を行う。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.Commit">
+            <summary>
+            コミット関数
+            トランザクションのコミットを行う。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.Rollback">
+            <summary>
+            ロールバック関数
+            トランザクションのロールバックを行う。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.ExecuteQuery(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.ExecuteScalar(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.ExecuteUpdate(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.OleDbConnectionFactory.Dispose">
+            <summary>
+            リソースをリリースします。
+            </summary>
+        </member>
+        <member name="T:Intersystech.ConnectionFactory.DbConnectionFactory">
+            <summary>
+            DbConnectionFactoryクラス
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.DbConnectionFactory.factory">
+            <summary>
+            DbConnectionFactoryオブジェクト
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.DbConnectionFactory.SqlCommandQueue">
+            <summary>
+            トランザクション単位で実行されるSQLコマンド種類のコレクション
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.DbConnectionFactory.DatabaseCustomExceptionMapping">
+            <summary>
+            データベースカスタム例外マッピングインターフェース
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.DbConnectionFactory.PageLoadTime">
+            <summary>
+            ページロード日時
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.DbConnectionFactory.LastUpdatedDatetime">
+            <summary>
+            最終更新日時
+            </summary>
+        </member>
+        <member name="P:Intersystech.ConnectionFactory.DbConnectionFactory.ConnectionStringIndex">
+            <summary>
+            接続文字列インデックス
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.DbConnectionFactory.databaseType">
+            <summary>
+            接続文字列インデックス
+            </summary>
+        </member>
+        <member name="P:Intersystech.ConnectionFactory.DbConnectionFactory.DatabaseType">
+            <summary>
+            データベース種類
+            </summary>
+        </member>
+        <member name="P:Intersystech.ConnectionFactory.DbConnectionFactory.DbConnectionString">
+            <summary>
+            データベース接続文字列
+            </summary>
+        </member>
+        <member name="P:Intersystech.ConnectionFactory.DbConnectionFactory.ExclusiveColumn">
+            <summary>
+            排他チェック用列名
+            </summary>
+        </member>
+        <member name="P:Intersystech.ConnectionFactory.DbConnectionFactory.DoUpdateLock">
+            <summary>
+            更新時に行単位のロックを行うか
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.CreateFactory(Intersystech.DataModel.DatabaseType,System.Int32)">
+            <summary>
+            データベース種類に応じて、接続します。
+            </summary>
+            <param name="databaseType">データベース種類</param>
+            <param name="connectionStringIndex">接続文字列インデックス</param>
+            <returns>DbConnectionFactoryオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.GetFactory">
+            <summary>
+            データベースファクトリを取得します。
+            </summary>
+            <returns>DbConnectionFactoryオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.CreateConnection">
+            <summary>
+            データベースへ接続します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.ExecuteQuery(System.String,System.Int32)">
+            <summary>
+            検索用SQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.ExecuteScalar(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行し、返す結果セットの最初の行にある最初の列を返します。 残りの列または行は無視されます。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.ExecuteUpdate(System.String,System.Int32)">
+            <summary>
+            更新用SQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.Open">
+            <summary>
+            データベース接続を開きます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.Close">
+            <summary>
+            データベースへの接続を閉じます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.BeginTransaction">
+            <summary>
+            トランザクションを開始します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.Commit">
+            <summary>
+            トランザクションをコミットします。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.Rollback">
+            <summary>
+            トランザクションをロールバックします。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.IsDataDirty(System.String)">
+            <summary>
+            データが変更されたか
+            </summary>
+            <param name="command">実行SQL</param>
+            <returns>False：変更されていない、True：変更された</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.UpdateLockIfNeed(System.String)">
+            <summary>
+            行ロックの必要な場合かつUPDATEコマンドの場合、行ロックを行います。
+            </summary>
+            <param name="command">実行SQL</param>
+            <returns>false：行ロック不要、true：行ロック成功</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.GetExclusiveCheckCommand(System.Boolean,System.String)">
+            <summary>
+            排他チェックコマンドを取得します。
+            <para>行ロック不要な場合又はSELECT、INSERTの場合、元のコマンドを返す。</para>
+            <para>DELETE、UPDATEの場合、排他チェックコマンドを返す。</para>
+            </summary>
+            <param name="doExclusiveCheck">排他チェックを行うか</param>
+            <param name="command">SQLコマンド</param>
+            <returns>行ロック不要な場合又はSELECT、INSERTの場合、元のコマンドを返す。<br/>DELETE、UPDATEの場合、排他チェックコマンドを返す。</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.DbConnectionFactory.Dispose">
+            <summary>
+            リソースを解放します。
+            </summary>
+        </member>
+        <member name="T:Intersystech.ConnectionFactory.SqlCommandType">
+            <summary>
+            SQLコマンド種類
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.SqlCommandType.Select">
+            <summary>
+            検索
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.SqlCommandType.Insert">
+            <summary>
+            追加
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.SqlCommandType.Update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="F:Intersystech.ConnectionFactory.SqlCommandType.Delete">
+            <summary>
+            削除
+            </summary>
+        </member>
+        <member name="T:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory">
+            <summary>
+            SqlServerDbConnectionFactoryクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.CreateConnection">
+            <summary>
+            データベースへ接続します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.ExecuteQuery(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.ExecuteScalar(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.ExecuteUpdate(System.String,System.Int32)">
+            <summary>
+            指定するSQLコマンドを実行します。
+            </summary>
+            <param name="command">SQLコマンド</param>
+            <param name="commandTimeout">タイムアウト時間</param>
+            <returns>Dtoオブジェクト</returns>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.Open">
+            <summary>
+            データベース接続をOpenします。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.Close">
+            <summary>
+            データベース接続をCloseします。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.BeginTransaction">
+            <summary>
+            トランザクション開始関数
+            トランザクションの開始を行う。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.Commit">
+            <summary>
+            コミット関数
+            トランザクションのコミットを行う。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.Rollback">
+            <summary>
+            ロールバック関数
+            トランザクションのロールバックを行う。
+            </summary>
+        </member>
+        <member name="M:Intersystech.ConnectionFactory.SqlServerDbConnectionFactory.Dispose">
+            <summary>
+            リソースをリリースします。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,927 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.UI</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.UI.AbstractExecuteHandler">
+            <summary>
+            ExecuteHandler抽象クラス
+            <remarks>BusinessFacadeメソッドの実行機能を提供します。</remarks>
+            </summary>
+        </member>
+        <member name="F:Intersystech.UI.AbstractExecuteHandler.connectionStringIndex">
+            <summary>
+            接続文字列インデックス
+            </summary>
+        </member>
+        <member name="F:Intersystech.UI.AbstractExecuteHandler.databaseType">
+            <summary>
+            データベース種類
+            </summary>
+        </member>
+        <member name="F:Intersystech.UI.AbstractExecuteHandler.PageLoadTime">
+            <summary>
+            ページロード日時
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractExecuteHandler.GetBusinessFacade``1">
+            <summary>
+            指定したBusinessFacadeクラスのインスタンスを取得します。
+            </summary>
+            <typeparam name="T">BusinessFacadeRepository型</typeparam>
+            <returns>BusinessFacadeのインスタンス</returns>
+        </member>
+        <member name="M:Intersystech.UI.AbstractExecuteHandler.Execute``1(System.Action{``0},``0)">
+            <summary>
+            BusinessFacadeメソッドを実行します。
+            </summary>
+            <typeparam name="TParam">メソッドのパラメータ型</typeparam>
+            <param name="action">メソッド名</param>
+            <param name="param">メソッドパラメータ</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractExecuteHandler.ChangeConnection(Intersystech.DataModel.DatabaseType,System.Int32)">
+            <summary>
+            接続先データベースを変更します。
+            </summary>
+            <param name="databaseType">データベース種類</param>
+            <param name="connectionStringIndex">接続文字列インデックス</param>
+        </member>
+        <member name="T:Intersystech.UI.IPageHandler">
+            <summary>
+            IPageHandlerインターフェース
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.PageLoadTime">
+            <summary>
+            ページロード時刻
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.LastUpdatedDatetime">
+            <summary>
+            最終更新日時
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.HostIPAddress">
+            <summary>
+            ホストIPアドレス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.RawUrl">
+            <summary>
+            現在の要求の生のURL
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.PageFullName">
+            <summary>
+            拡張子を含むページの物理名
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.BrowserName">
+            <summary>
+            ブラウザー名(小文字)
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.BrowserMajorVersion">
+            <summary>
+            ブラウザーのメジャー (整数) バージョン番号
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.BrowserFullVersion">
+            <summary>
+            ブラウザーの完全なバージョン番号 (整数と小数) 
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.IPageHandler.QueryString">
+            <summary>
+            クエリ文字列変数のコレクションを取得します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.IsMicrosoftNetBrowser">
+            <summary>
+            Microsoftのネットブラウザーであるか
+            </summary>
+            <returns>Internet ExplorerまたはEdgeの場合、true。それ以外の場合、false。</returns>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.IsIEGreaterThan8">
+            <summary>
+            IEのバージョンが8以上であるかどうかを示す値を取得します。
+            </summary>
+            <returns>false:IE8以前のバージョン,true:IE8以降のバージョン</returns>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.RemoveDocumentMode">
+            <summary>
+            ドキュメントモードを解除します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.AddDocumentMode(System.Int32)">
+            <summary>
+            ドキュメントモードを指定します。
+            </summary>
+            <param name="majorVersion">IEのメジャーバージョン</param>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.CheckJavascriptValid(System.String)">
+            <summary>
+            Javascriptが有効になっているかをチェックします。
+            </summary>
+            <param name="message">Javascriptが無効の場合のメッセージ</param>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.RedirectTo``1(System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Response.Redirectと同等の機能を提供します)。
+            </summary>
+            <typeparam name="TPage">指定ページ</typeparam>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.RedirectTo(System.String,System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Response.Redirectと同等の機能を提供します)。
+            </summary>
+            <param name="url">指定URL</param>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.TransferTo``1(System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Server.Transferと同等の機能を提供します)。
+            </summary>
+            <typeparam name="TPage">指定ページ</typeparam>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.IPageHandler.TransferTo(System.String,System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Server.Transferと同等の機能を提供します)。
+            </summary>
+            <param name="url">指定URL</param>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="T:Intersystech.UI.ISTCompareValidator">
+            <summary>
+            入力コントロールのユーザ定義検証を実行します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTCompareValidator.OnInit(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Init イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTCompareValidator.LanguageId">
+            <summary>
+            言語コード
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTCompareValidator.ErrorMessageID">
+            <summary>
+            エラーメッセージID
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTRangeValidator">
+            <summary>
+            入力コントロールのユーザ定義検証を実行します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTRangeValidator.OnInit(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Init イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTRangeValidator.LanguageId">
+            <summary>
+            言語コード
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTRangeValidator.ErrorMessageID">
+            <summary>
+            エラーメッセージID
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTCustomValidator">
+            <summary>
+            入力コントロールのユーザ定義検証を実行します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTCustomValidator.OnInit(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Init イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTCustomValidator.LanguageId">
+            <summary>
+            言語コード
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTCustomValidator.ErrorMessageID">
+            <summary>
+            エラーメッセージID
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTTextBox">
+            <summary>
+            ISTTextBoxクラス
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTTextBox.OnLoad(System.EventArgs)">
+            <summary>
+            サーバー コントロールが System.Web.UI.Page オブジェクトに読み込まれると発生します。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTTextBox.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTTextBox.IsTrimNecessary">
+            <summary>
+            Intersystech.UI.ISTTextBox コントロールのテキストの内容の前後にある半角空白または改行コードを取除くかどうかを示す値を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTTextBox.Text">
+            <summary>
+            Intersystech.UI.ISTTextBox コントロールのテキストの内容を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTTextBox.PlaceHolder">
+            <summary>
+            Intersystech.UI.ISTTextBox コントロールのテキストの入力ヒントを取得または設定します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTTextBox.OnTextChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTTextBoxのTextChanged イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="T:Intersystech.UI.ISTRequiredFieldValidator">
+            <summary>
+            入力コントロールのユーザ定義検証を実行します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTRequiredFieldValidator.OnInit(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Init イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTRequiredFieldValidator.LanguageId">
+            <summary>
+            言語コード
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTRequiredFieldValidator.ErrorMessageID">
+            <summary>
+            エラーメッセージID
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.PageHandler">
+            <summary>
+            PageHandlerクラス
+            </summary>
+        </member>
+        <member name="F:Intersystech.UI.PageHandler.pageLoadTime">
+            <summary>
+            ページロード時刻
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#PageLoadTime">
+            <summary>
+            ページロード時刻
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#LastUpdatedDatetime">
+            <summary>
+            最終更新日時
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#HostIPAddress">
+            <summary>
+            ホストIPアドレス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.RawUrl">
+            <summary>
+            現在の要求の生のURL
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#PageFullName">
+            <summary>
+            拡張子を含むページの物理名
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#BrowserName">
+            <summary>
+            ブラウザー名(小文字)
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#BrowserMajorVersion">
+            <summary>
+            ブラウザーのメジャー (整数) バージョン番号
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.PageHandler.Intersystech#UI#IPageHandler#BrowserFullVersion">
+            <summary>
+            ブラウザーの完全なバージョン番号 (整数と小数) 
+            </summary>
+        </member>
+        <member name="F:Intersystech.UI.PageHandler.queryString">
+            <summary>
+            クエリ文字列変数のコレクションを取得します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.IsMicrosoftNetBrowser">
+            <summary>
+            Microsoftのネットブラウザーであるか
+            </summary>
+            <returns>Internet ExplorerまたはEdgeの場合、true。それ以外の場合、false。</returns>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.IsIEGreaterThan8">
+            <summary>
+            Internet Explorerのバージョンが8以上であるかどうかを示す値を取得します。
+            </summary>
+            <returns>false:IE8以前のバージョン,true:IE8以降のバージョン</returns>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.RemoveDocumentMode">
+            <summary>
+            ドキュメントモードを解除します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.AddDocumentMode(System.Int32)">
+            <summary>
+            ドキュメントモードを指定します。
+            </summary>
+            <param name="majorVersion">IEのメジャーバージョン</param>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.RedirectTo``1(System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Response.Redirectと同等の機能を提供します)。
+            </summary>
+            <typeparam name="TPage">Webページ</typeparam>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.RedirectTo(System.String,System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Response.Redirectと同等の機能を提供します)。
+            </summary>
+            <param name="url">指定URL</param>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.TransferTo``1(System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Server.Transferと同等の機能を提供します)。
+            </summary>
+            <typeparam name="TPage">Webページ</typeparam>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.TransferTo(System.String,System.Boolean)">
+            <summary>
+            指定ページへ遷移します(Server.Transferと同等の機能を提供します)。
+            </summary>
+            <param name="url">指定URL</param>
+            <param name="endResponse">現在のページの実行を終了するかどうかを示します</param>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.GetQueryStringValue">
+            <summary>
+            URLクエリ文字列を取得します。
+            </summary>
+            <returns>URLクエリ文字列</returns>
+        </member>
+        <member name="M:Intersystech.UI.PageHandler.CheckJavascriptValid(System.String)">
+            <summary>
+            Javascriptが有効になっているかをチェックします。
+            </summary>
+            <param name="message">Javascriptが無効の場合のメッセージ</param>
+        </member>
+        <member name="T:Intersystech.UI.AbstractPage`1">
+            <summary>
+            AbstractPageクラス
+            <remarks>System.Web.UI.Pageを継承し拡張機能を持つクラスです。</remarks>
+            </summary>
+            <typeparam name="T">AbstractExecuteHandler</typeparam>
+        </member>
+        <member name="F:Intersystech.UI.AbstractPage`1.LogChar">
+            <summary>
+            ログ連結文字列
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractPage`1.PageHandler">
+            <summary>
+            ページハンドラー
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractPage`1.ExecuteHandler">
+            <summary>
+            ビジネスファサードを呼び出すためのハンドラー
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractPage`1.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractPage`1.IsDataDirty">
+            <summary>
+            ページ内のデータが変更されたかを示す値を取得します。
+            <remarks>(True:変更あり、False:変更なし)</remarks>
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.OnPreInit(System.EventArgs)">
+            <summary>
+            ページの初期化の開始時に System.Web.UI.Page.PreInit イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.OnLoad(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Load イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.SetQueryString(System.Web.HttpRequest)">
+            <summary>
+            URLクエリ文字列を設定します。
+            </summary>
+            <param name="request">Web要求</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.OnLoadComplete(System.EventArgs)">
+            <summary>
+            ページの読み込み段階の終了時に System.Web.UI.Page.LoadComplete イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.OnError(System.EventArgs)">
+            <summary>
+            処理されていないページ例外が発生した場合に、呼び出されます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.RegisterCheckDataDirty">
+            <summary>
+            変更チェックScript登録
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.DoConfirmOK(System.String)">
+            <summary>
+            ConfirmダイアログのOKボタンが押下された時に、実行されます。
+            </summary>
+            <param name="commandParameter">呼出元を区別するためのパラメータ</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.ChangeDocumentMode">
+            <summary>
+            ドキュメントモード変更
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.ShowAlert(System.String)">
+            <summary>
+            Alertメッセージを表示します。
+            </summary>
+            <param name="message">メッセージ内容</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.ShowAlertTo``1(System.String)">
+            <summary>
+            Alertメッセージを表示した後、指定ページへ遷移します。
+            </summary>
+            <typeparam name="TPage">指定ページ</typeparam>
+            <param name="message">メッセージ内容</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.RegisterLoadingFunction(System.String,System.String,System.Int32)">
+            <summary>
+            ローディング画面を制御するjavascript関数を設定します。
+            </summary>
+            <param name="showFunction">ローディング画面を表示するjavascript関数名(括弧付き)</param>
+            <param name="hideFunction">ローディング画面を非表示にするjavascript関数名(括弧付き)</param>
+            <param name="milliseconds">ローディング画面が表示されるまでのタイマー時間(単位:ミリ秒)</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.ShowConfirm(System.String,System.String)">
+            <summary>
+            Confirmダイアログを表示します。
+            </summary>
+            <param name="message">メッセージ内容</param>
+            <param name="commandParameter">呼出元を区別するためのパラメータ</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.SetDataDirty">
+            <summary>
+            データ変更状態を変更ありにします。
+            <remarks>IsDataDirtyの戻り値はTrueになります。</remarks>
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractPage`1.SetDataClean">
+            <summary>
+            データ変更状態を変更なしにします。
+            <remarks>IsDataDirtyの戻り値はFalseになります。</remarks>
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTHiddenField">
+            <summary>
+            ISTHiddenFieldクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTHiddenField.Value">
+            <summary>
+            Intersystech.UI.ISTHiddenField コントロールの値を取得または設定します。
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTLabel">
+            <summary>
+            ISTLabelクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTLabel.IsAspLabel">
+            <summary>
+            ラベルコントロールと同じ仕様であるかを示す値を取得または設定します。
+            <para>true の場合、コントロールのテキストの内容をエンコードまたはデコードしません。</para>
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTLabel.Text">
+            <summary>
+            Intersystech.UI.ISTLabel コントロールのテキストの内容を取得または設定します。
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTDropDownList">
+            <summary>
+            ISTDropDownListクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTDropDownList.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTDropDownList.Text">
+            <summary>
+            Intersystech.UI.ISTDropDownList コントロールのSelectedValueプロパティを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTDropDownList.SelectedValue">
+            <summary>
+            Intersystech.UI.ISTDropDownList コントロールのSelectedValueプロパティを取得します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTDropDownList.SelectedText">
+            <summary>
+            Intersystech.UI.ISTDropDownList コントロールの表示されるテキストを取得します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTDropDownList.OnSelectedIndexChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTDropDownListのSelectedIndexChanged イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTDropDownList.OnTextChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTDropDownListのTextChanged イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTDropDownList.DataBind(System.Data.DataSet,System.String,System.String,System.Boolean)">
+            <summary>
+            呼び出されたサーバー コントロールと、そのすべての子コントロールにデータ ソースをバインドします。
+            </summary>
+            <param name="ds">データセット</param>
+            <param name="dataTextField">リスト項目のテキストの内容のフィールド</param>
+            <param name="dataValueField">リスト項目のテキストの値のフィールド</param>
+            <param name="isTopBlank">先頭に空白行を含めるか</param>
+        </member>
+        <member name="M:Intersystech.UI.ISTDropDownList.DataBind(System.Data.DataTable,System.String,System.String,System.Boolean)">
+            <summary>
+            呼び出されたサーバー コントロールと、そのすべての子コントロールにデータ ソースをバインドします。
+            </summary>
+            <param name="dt">データテーブル</param>
+            <param name="dataTextField">リスト項目のテキストの内容のフィールド</param>
+            <param name="dataValueField">リスト項目のテキストの値のフィールド</param>
+            <param name="isTopBlank">先頭に空白行を含めるか</param>
+        </member>
+        <member name="T:Intersystech.UI.AbstractMasterPage`1">
+            <summary>
+            AbstractMasterPageクラス
+            <remarks>UI側向け様々な機能を提供します。</remarks>
+            </summary>
+            <typeparam name="T">AbstractExecuteHandler</typeparam>
+        </member>
+        <member name="P:Intersystech.UI.AbstractMasterPage`1.PageHandler">
+            <summary>
+            ページハンドラー
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractMasterPage`1.ExecuteHandler">
+            <summary>
+            イベントサービスハンドラ
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractMasterPage`1.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractMasterPage`1.OnLoad(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Load イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractMasterPage`1.ShowAlert(System.String)">
+            <summary>
+            Alertメッセージを表示します。
+            </summary>
+            <param name="message">メッセージ内容</param>
+        </member>
+        <member name="T:Intersystech.UI.AbstractUserControl`1">
+            <summary>
+            AbstractUserControlクラス
+            <remarks>System.Web.UI.UserControlを継承し拡張機能を持つクラスです。</remarks>
+            </summary>
+            <typeparam name="T">AbstractExecuteHandler</typeparam>
+        </member>
+        <member name="P:Intersystech.UI.AbstractUserControl`1.PageHandler">
+            <summary>
+            ページハンドラー
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractUserControl`1.ExecuteHandler">
+            <summary>
+            イベントサービスハンドラ
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.AbstractUserControl`1.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.AbstractUserControl`1.OnLoad(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Load イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractUserControl`1.LoadIsNotPostBack(System.Object,System.EventArgs)">
+            <summary>
+            PostBack以外の時に、実行されます。
+            </summary>
+            <param name="sender">object</param>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractUserControl`1.LoadIsPostBack(System.Object,System.EventArgs)">
+            <summary>
+            PostBackの時に、実行されます。
+            </summary>
+            <param name="sender">object</param>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractUserControl`1.ShowAlert(System.String)">
+            <summary>
+            Alertメッセージを表示します。
+            </summary>
+            <param name="message">メッセージ内容</param>
+        </member>
+        <member name="M:Intersystech.UI.AbstractUserControl`1.ShowAlertTo``1(System.String,System.String,System.Int32)">
+            <summary>
+            Alertメッセージを表示した後、指定ページへ遷移します。
+            </summary>
+            <typeparam name="TPage">指定ページ</typeparam>
+            <param name="message">メッセージ内容</param>
+            <param name="showFunction">ローディング画面を表示するjavascript関数名(括弧付き)</param>
+            <param name="milliseconds">ローディング画面が表示されるまでのタイマー時間(単位:ミリ秒)</param>
+        </member>
+        <member name="T:Intersystech.UI.ISTLinkButton">
+            <summary>
+            ISTLinkButtonクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTLinkButton.Text">
+            <summary>
+            Intersystech.UI.ISTLinkButton コントロールに表示されるテキスト キャプションを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTLinkButton.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTLinkButton.OnClick(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTLinkButtonのClick イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="T:Intersystech.UI.ISTListView">
+            <summary>
+            ISTListViewクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTListView.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemCanceling(System.Web.UI.WebControls.ListViewCancelEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemCanceling イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemCommand(System.Web.UI.WebControls.ListViewCommandEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemCommand イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemCreated(System.Web.UI.WebControls.ListViewItemEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemCreated イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemDataBound(System.Web.UI.WebControls.ListViewItemEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemDataBound イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemDeleted(System.Web.UI.WebControls.ListViewDeletedEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemDeleted イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemDeleting(System.Web.UI.WebControls.ListViewDeleteEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemDeleting イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemEditing(System.Web.UI.WebControls.ListViewEditEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemEditing イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemInserted(System.Web.UI.WebControls.ListViewInsertedEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemInserted イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemInserting(System.Web.UI.WebControls.ListViewInsertEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemInserting イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemUpdated(System.Web.UI.WebControls.ListViewUpdatedEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemUpdated イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnItemUpdating(System.Web.UI.WebControls.ListViewUpdateEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのItemUpdating イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnLayoutCreated(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのLayoutCreated イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnPagePropertiesChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのPagePropertiesChanged イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnPagePropertiesChanging(System.Web.UI.WebControls.PagePropertiesChangingEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのPagePropertiesChanging イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnSelectedIndexChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのSelectedIndexChanged イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnSelectedIndexChanging(System.Web.UI.WebControls.ListViewSelectEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのSelectedIndexChanging イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnSorted(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのSorted イベントを発生させます。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTListView.OnSorting(System.Web.UI.WebControls.ListViewSortEventArgs)">
+            <summary>
+            Intersystech.UI.ISTListViewのSorting イベントを発生させます。
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTButton">
+            <summary>
+            ISTButtonクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTButton.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTButton.OnClick(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTButtonのClick イベントを発生させます。
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTRadioButton">
+            <summary>
+            ISTRadioButtonクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTRadioButton.Text">
+            <summary>
+            Intersystech.UI.ISTRadioButton に関連付けられるテキスト ラベルを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTRadioButton.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTRadioButton.OnCheckedChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTRadioButtonのCheckedChanged イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTRadioButton.CheckedValue">
+            <summary>
+            文字列の値をもとに、チェックオンとチェックオフに切り替えます。
+            "1":チェックオン　"0":チェックオフ
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTCheckBox">
+            <summary>
+            ISTCheckBoxクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTCheckBox.Text">
+            <summary>
+            Intersystech.UI.ISTCheckBox に関連付けられるテキスト ラベルを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTCheckBox.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTCheckBox.OnCheckedChanged(System.EventArgs)">
+            <summary>
+            Intersystech.UI.ISTCheckBoxのCheckedChanged イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTCheckBox.CheckedValue">
+            <summary>
+            文字列の値をもとに、チェックオンとチェックオフに切り替えます。
+            "1":チェックオン　"0":チェックオフ
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTImageButton">
+            <summary>
+            ISTImageButtonクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTImageButton.AlertHelper">
+            <summary>
+            IAlertHelperオブジェクト
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTImageButton.OnClick(System.Web.UI.ImageClickEventArgs)">
+            <summary>
+            Intersystech.UI.ISTImageButtonのClick イベントを発生させます。
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTFileUpload">
+            <summary>
+            ISTFileUploadクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTFileUpload.FileName">
+            <summary>
+            Intersystech.UI.ISTFileUpload コントロールを使用して、アップロードする、クライアント上のファイルの名前を取得します。
+            </summary>
+        </member>
+        <member name="T:Intersystech.UI.ISTRegularExpressionValidator">
+            <summary>
+            入力コントロールのユーザ定義検証を実行します。
+            </summary>
+        </member>
+        <member name="M:Intersystech.UI.ISTRegularExpressionValidator.OnInit(System.EventArgs)">
+            <summary>
+            System.Web.UI.Control.Init イベントを発生させます。
+            </summary>
+            <param name="e">イベント データを格納している System.EventArgs。</param>
+        </member>
+        <member name="P:Intersystech.UI.ISTRegularExpressionValidator.LanguageId">
+            <summary>
+            言語コード
+            </summary>
+        </member>
+        <member name="P:Intersystech.UI.ISTRegularExpressionValidator.ErrorMessageID">
+            <summary>
+            エラーメッセージID
+            </summary>
+        </member>
+    </members>
+</doc>

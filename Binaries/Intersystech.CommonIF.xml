@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.CommonIF</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.CommonIF.DatabaseCustomExceptionMapping">
+            <summary>
+            データベースカスタム例外マッピングクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.CommonIF.DatabaseCustomExceptionMapping.IsCustomExceptionMappingEnabled">
+            <summary>
+            カスタム例外マッピングが有効か
+            </summary>
+        </member>
+        <member name="P:Intersystech.CommonIF.DatabaseCustomExceptionMapping.CustomExceptionMappingPath">
+            <summary>
+            カスタム例外マッピングパス
+            </summary>
+        </member>
+        <member name="P:Intersystech.CommonIF.DatabaseCustomExceptionMapping.DatabaseType">
+            <summary>
+            データベース種類
+            </summary>
+        </member>
+        <member name="M:Intersystech.CommonIF.DatabaseCustomExceptionMapping.GetKeyValueList">
+            <summary>
+            データベースカスタム例外マッピングファイルの内容を取得します。
+            </summary>
+            <returns>データベースカスタム例外マッピングファイルの内容</returns>
+        </member>
+        <member name="M:Intersystech.CommonIF.DatabaseCustomExceptionMapping.GetXmlDocument">
+            <summary>
+            カスタム例外マッピングXMLドキュメントを取得します。
+            </summary>
+            <returns>XMLドキュメント</returns>
+        </member>
+        <member name="M:Intersystech.CommonIF.DatabaseCustomExceptionMapping.ValidationErrorHandler(System.Object,System.Xml.Schema.ValidationEventArgs)">
+            <summary>
+            スキーマ検証イベント
+            </summary>
+            <param name="sender">オブジェクト</param>
+            <param name="e">ValidationEventHandler に関する詳細情報</param>
+        </member>
+        <member name="M:Intersystech.CommonIF.DatabaseCustomExceptionMapping.Resolve(System.Exception)">
+            <summary>
+            カスタム例外を判定します。
+            </summary>
+            <param name="ex">例外オブジェクト</param>
+        </member>
+        <member name="T:Intersystech.CommonIF.IDatabaseCustomExceptionMapping">
+            <summary>
+            データベースカスタム例外マッピングインターフェース
+            </summary>
+        </member>
+        <member name="P:Intersystech.CommonIF.IDatabaseCustomExceptionMapping.IsCustomExceptionMappingEnabled">
+            <summary>
+            カスタム例外マッピングが有効か
+            </summary>
+        </member>
+        <member name="M:Intersystech.CommonIF.IDatabaseCustomExceptionMapping.GetKeyValueList">
+            <summary>
+            データベースカスタム例外マッピングファイルの内容を取得します。
+            </summary>
+            <returns>データベースカスタム例外マッピングファイルの内容</returns>
+        </member>
+        <member name="M:Intersystech.CommonIF.IDatabaseCustomExceptionMapping.Resolve(System.Exception)">
+            <summary>
+            カスタム例外を判定します。
+            </summary>
+            <param name="ex">例外オブジェクト</param>
+        </member>
+    </members>
+</doc>

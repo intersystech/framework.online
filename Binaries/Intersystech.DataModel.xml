@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersystech.DataModel</name>
+    </assembly>
+    <members>
+        <member name="T:Intersystech.DataModel.DatabaseType">
+            <summary>
+            DatabaseTypeクラス
+            </summary>
+        </member>
+        <member name="F:Intersystech.DataModel.DatabaseType.None">
+            <summary>
+            未設定
+            </summary>
+        </member>
+        <member name="F:Intersystech.DataModel.DatabaseType.MySQL">
+            <summary>
+            MySQL
+            </summary>
+        </member>
+        <member name="F:Intersystech.DataModel.DatabaseType.Oracle">
+            <summary>
+            Oracle
+            </summary>
+        </member>
+        <member name="F:Intersystech.DataModel.DatabaseType.SQLServer">
+            <summary>
+            SQLServer
+            </summary>
+        </member>
+        <member name="F:Intersystech.DataModel.DatabaseType.Access">
+            <summary>
+            Access
+            </summary>
+        </member>
+        <member name="T:Intersystech.DataModel.Dto">
+            <summary>
+            Dto抽象クラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.Dto.IsDeleted">
+            <summary>
+            削除されたかどうかを示す値
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.Dto.CreateUserID">
+            <summary>
+            作成ユーザID
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.Dto.CreateDatetime">
+            <summary>
+            作成日時
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.Dto.UpdateUserID">
+            <summary>
+            更新ユーザID
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.Dto.UpdateDatetime">
+            <summary>
+            更新日時
+            </summary>
+        </member>
+        <member name="T:Intersystech.DataModel.RequestDto">
+            <summary>
+            リクエストDtoクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.RequestDto.SystemDatetime">
+            <summary>
+            システム日時
+            </summary>
+        </member>
+        <member name="T:Intersystech.DataModel.ResponseDto">
+            <summary>
+            レスポンスDtoクラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.ResponseDto.AffectedResultSet">
+            <summary>
+            実行結果データセット
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.ResponseDto.AffectedObject">
+            <summary>
+            実行結果オブジェクト
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.ResponseDto.AffectedCount">
+            <summary>
+            実行結果件数
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.ResponseDto.SystemDatetime">
+            <summary>
+            システム日時
+            </summary>
+        </member>
+        <member name="T:Intersystech.DataModel.UserInfoBase">
+            <summary>
+            ユーザ情報クラス
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.UserInfoBase.Id">
+            <summary>
+            ユーザID
+            </summary>
+        </member>
+        <member name="P:Intersystech.DataModel.UserInfoBase.Name">
+            <summary>
+            ユーザ名
+            </summary>
+        </member>
+    </members>
+</doc>
